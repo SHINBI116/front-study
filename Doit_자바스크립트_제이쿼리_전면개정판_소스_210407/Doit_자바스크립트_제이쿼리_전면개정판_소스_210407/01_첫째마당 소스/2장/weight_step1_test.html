@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 과체중 테스트 </title>
+<script>
+	var userHeight = 180; //신장
+	var userWeight = 74; //몸무게
+
+	const normalWeight = userHeight => (userHeight - 100) * 0.9;
+	const isNormalWeight = (userHeight, userWeight) => {
+		const weight = normalWeight(userHeight);
+		document.write(`적정체중은 ${weight}이며, 현재 적정 체중에서 ${Math.abs(weight - userWeight)}kg 초과한 것을 알 수 있습니다.`);
+	};
+
+	isNormalWeight(userHeight, userWeight);
+
+</script>
+</head>
+<body>
+</body>
+</html>

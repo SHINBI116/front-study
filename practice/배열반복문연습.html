@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <div id="out"></div>
+    <h3>수학 미통과자 명단</h3>
+    <div id="failed-out"></div>
+
+    <script>
+        /*
+            (1) 학생 번호, 이름, 국/영/수 랜덤 점수, 급식 만족도(별 0 ~ 5)를 가진
+                학생 100명의 자바스크립트 오브젝트 배열을 생성
+            (2) 모든 학생들의 평균 점수들로 이루어진 배열을 생성
+            (3) 수학 점수가 60점 이하인 학생들로만 이루어진 배열을 생성
+            (4) 학생들의 급식 만족도의 평균을 구할 것
+
+            (1) ,(2), (3)을 모두 html에 보기좋게 출력할 것
+        */
+
+        // (1) 학생 번호, 이름, 국/영/수 랜덤 점수, 급식 만족도(별 0 ~ 5)를 가진
+        //     학생 100명의 자바스크립트 오브젝트 배열을 생성
+        const firstNameValue = ['김', '이', '박', '최', '나', '남궁', '소', '강'];
+        const LastnameValue = ['가현', '나현', '철수', '영희', '봉팔', '대식', '지원', '승리', '득필'];
+
+        const ranName = () => firstNameValue[Math.floor(Math.random() * firstNameValue.length)] + LastnameValue[Math.floor(Math.random() * LastnameValue.length)];
+        const ranScore = () => Math.floor(Math.random() * 101);
+        const mealSati = () => Math.floor(Math.random() * 6);
+
+        const students = [];
+
+
+        for (let i = 0; i < 100; ++i) {
+            students[i] = {
+                num: i,
+                name: ranName(),
+                kor: ranScore(),
+                eng: ranScore(),
+                math: ranScore(),
+                star: mealSati()
+            };
+        }
+
+        console.log(students);
+
+        const getAvg = stu => 
+            Math.round((stu.kor + stu.eng + stu.math) / 3 * 100) / 100;
+
+        const allStuAvgArr = students.map(stu => {
+            return {
+                ...stu,
+                avg: getAvg(stu),
+            }
+        });
+
+        console.log(allStuAvgArr);
+
+        const failedMathArr = students.filter(stu => stu.math <= 60);
+
+        console.log(failedMathArr);
+
+        const avg_star = students.reduce( (sum, stu) => sum + stu.star, 0 ) / students.length;
+        console.log(avg_star);
+
+
+        const out = document.getElementById("out");
+        const failedOut = document.getElementById("failed-out");
+        const fragment = document.createDocumentFragment();
+
+        const createStudentElement = (stu) => {
+            const fragment = document.createDocumentFragment();
+
+    // 학생을 감싸는 div
+            const studentDiv = document.createElement("div");
+            studentDiv.className = "each-student";
+
+    // 요소들을 배열로 생성
+        const studentData = [
+            { className: "each-stu-num", textContent: `학번: ${stu.num}` },
+            { className: "each-stu-name", textContent: `이름: ${stu.name}` },
+            { className: "each-stu-score", textContent: `국어: ${stu.kor}, 수학: ${stu.math}, 영어: ${stu.eng}` },
+            { className: "each-stu-avg", textContent: `평균: ${getAvg(stu)}` },
+            { className: "each-stu-sati", textContent: `급식만족도: ${stu.star}` }
+        ];
+
+    // 반복문을 사용해 각 요소 생성 및 추가
+    studentData.forEach(data => {
+        const div = document.createElement("div");
+        div.className = data.className;
+        div.textContent = data.textContent;
+        studentDiv.appendChild(div);
+    });
+
+    // 최종적으로 학생 div를 fragment에 추가
+        fragment.appendChild(studentDiv);
+        return fragment;
+    };
+
+    // 모든 학생에 대해 createStudentElement 함수 호출 및 DOM에 추가
+    students.forEach(stu => out.appendChild(createStudentElement(stu)));
+    failedMathArr.forEach(stu => failedOut.appendChild(createStudentElement(stu)));
+        
+
+    </script>
+
+</body>
+</html>

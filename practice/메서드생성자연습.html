@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function Fruit(name, price, qty) {
+            this.name = name;
+            this.price = price;
+            this.qty = qty;
+
+            this.print = () => console.log(`Fruit(name=${name}, price=${price}, qty=${qty})`);
+
+            this.sell = (sellQty) => qty -= sellQty;
+
+        };
+
+        const fruit1 = new Fruit('사과', 2200, 30);
+
+        fruit1.print();
+
+        fruit1.sell(2);
+
+        fruit1.print();
+    </script>
+</body>
+</html>

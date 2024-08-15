@@ -25,7 +25,7 @@
         // 새로운 배열을 대입하는 것은 const에 걸린다
         //drinks = ['coke', 'sprite'];
 
-        console.log(drinks);
+        console.log('초기 drinks: ', drinks);
 
         // 메서드로 값 추가하기 pop, push, shift, unshift
         drinks.push('환타');
@@ -48,6 +48,8 @@
         // spread를 활용한 배열 합성
         const animals = [...groundAnimals, ...oceanAnimals];
         console.log(animals);
+        const animal2 = groundAnimals.concat(oceanAnimals);
+        console.log(`animal2 : ${animal2}`);
 
         // 배열 복사하기
         const groundAnimalsCopy = groundAnimals;

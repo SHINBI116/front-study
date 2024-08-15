@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_HTML요소 선택하기</title>
+    <style>
+        /* 자바스크립트로 요소의 클래스 속성을 수정하면
+            보였다 안보였다 하게 만들 수 있다*/
+        .visible {
+            visibility: visible;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h3># Document Object Model (DOM)</h3>
+
+    <ul>
+        <li>웹 브라우저의 HTML코드를 해석하여 생성해둔 객체</li>
+        <li>DOM을 통해 HTML의 모든 요소에 접근할 수 있다</li>
+    </ul>
+
+    <h3># 원하는 요소를 쉽게 선택하기 위한 document의 메서드들</h3>
+
+    <ul>
+        <li>document.getElementById(id) : id로 원하는 요소를 선택한다</li>
+        <li>document.getElementsByTagName(tagName) : 해당 태그명의 모든 요소를 선택한다</li>
+        <li>document.getElementsByClassName(className) :
+                        해당 클래스 속성을 지닌 모든 요소를 선택한다
+        </li>
+        <li>document.querySelector(cssSelector) : CSS선택자를 활용해 원하는 요소 하나를 선택한다</li>
+        <li>document.querySelectorAll(cssSelector) : CSS선택자를 활용해 원하는 요소 여러개를 선택한다</li>
+    </ul>
+
+    <h3># 선택한 HTML요소를 변경하기</h3>
+
+    <ul>
+        <li>element.innerHTML : 해당 요소의 내용을 변경한다 (tag 적용, 위험함)</li>
+        <li>element.innerText : 해당 요소의 내용을 변경한다 (tag 미적용, 보안좋음)</li>
+        <li>element.attribute : 해당 요소의 속성을 직접 변경 할 수 있다</li>
+        <li>element.setAttribute() : 해당 요소의 속성을 메서드로 변경 할 수 있다</li>
+        <li>element.classList : 해당 요소의 클래스들을 리스트 형태로 관리하는 객체</li>
+        <li>element.style.CSSpropertyName : 
+            해당 요소의 스타일 속성을 직접 변경 할 수 있다 -가 포함된 property는 camelCase로 변경해야 한다
+            (e.g. border-width를 자바스크립트에서 변경하고 싶다면 borderWidth를 변경)</li>
+
+    </ul>
+
+    <div>
+        <div id="div1" class="box red"></div>
+        <div id="div2" class="box important"></div>
+        <div id="div3" class="box important"></div>
+        <img id="img1" src="" alt="">
+        <img id="img2" class="invisible box border" src="../html/images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="">
+    </div>
+
+    <script>
+        // DOM 객체
+        console.dir(document);
+
+        // ID속성으로 선택하는 경우는 하나만 선택해서 가져온다
+        const div3 = document.getElementById("div3");
+
+        // 여러 요소를 선택하는 메서드는 HTMLCollection 타입으로 가져온다
+        const importants = document.getElementsByClassName("important");
+        const divs = document.getElementsByTagName("div");
+
+
+
+        console.dir(importants);
+        console.dir(divs);
+
+        // HTMLCollection은 배열이 아니기 때문에 forEach, map, filter등을 활용 할 수 없다
+        console.dir(divs[0]);
+        console.dir(divs[1]);
+        console.dir(divs[2]);
+        console.dir(divs[3]);
+        
+        // forEach를 활용하기 위해서는 배열로 변환해야 한다
+        // divs.forEach((div) => {console.log(div)});
+
+        // Array.from(HTMLCollection : 해당 컬렉션을 배열로 변환해주는 메서드)
+        Array.from(divs).forEach(div => console.log(div));
+
+
+        // 자바스크립트에서 CSS 선택자로 요소 선택하기
+        const div2 = document.querySelector("#div2");
+
+        console.log(div2);
+
+        // querySelectorAll()은 요소들은 NodeList 타입으로 꺼낸다
+        const boxs = document.querySelectorAll(".box");
+        console.dir(boxs);
+
+        boxs.forEach(box => console.log(box));
+
+        // NodeList타입도 Array.from()으로 배열로 변환 할 수 있다
+        const filterd = Array.from(boxs).filter(box => box.classList.contains("important"));
+
+        console.log('필터결과');
+        console.log(filterd);
+
+        const div1 = document.querySelector("#div1");
+        const img1 = document.querySelector("#img1");
+
+        div1.innerHTML = "<b>자바스크립트에서 추가한 내용</b>";
+        div2.innerText = "<b>자바스크립트에서 추가한 내용</b>";
+
+        console.dir(div1);
+        console.dir(img1);
+
+        // 선택한 요소의 속성값을 쉽게 변경 할 수 있다
+        img1.alt = "펭귄이 신나하는 그림";
+        img1.src = "../html/images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg";
+        img1.width = "200";
+
+
+        // 속성을 직접 변경해도 되지만 메서드를 활용해 변경 할 수도 있다
+        img1.setAttribute("src", "../html/images/cat-stripes.webp");
+        img1.setAttribute("alt", "멋있는 고양이 그림");
+        img1.setAttribute("style", "width: 500px");
+
+        // 해당 요소의 클래스 속성을 직접 수정하기
+        // (class는 민감한 단어이기 때문에 속성 이름으로 className을 사용한다)
+        img1.className = "border visible box big-img";
+
+        const img2 = document.getElementById("img2");
+
+        // invisible 클래스를 visible로 변경
+        console.log(img2.className);
+        // 문자열 메서드를 활용해 수정 할 수는 있지만 매우 불안한 작업이다
+        // img2.className = img2.className.replace("invisible", "visible");
+
+        console.dir(img2);
+
+        // 요소.classList : 해당 요소의 클래스를 리스트 형태로 다룰 수 있다
+        img2.classList.remove("invisible");
+        img2.classList.add("visible");
+        img2.setAttribute("width", "400");
+
+
+    </script>
+
+
+</body>
+</html>
