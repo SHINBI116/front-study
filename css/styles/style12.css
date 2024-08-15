@@ -1,0 +1,38 @@
+#out > span:nth-child(even) {
+    color: skyblue;
+}
+
+
+#out > span:hover {
+    color: forestgreen;
+}
+
+#out > span:last-child {
+    color: slateblue;
+}
+
+#out > span:first-child {
+    color: tomato;
+}
+
+#to_naver:link {
+    font-size: 35px;
+    font-weight: bold;
+    background-color: #03c75a;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+#to_naver:active {
+    background-color: navy;
+}
+#to_naver:visited {
+   color: white;
+}
+
+#to_naver:hover {
+    text-decoration: underline solid 2px white;
+}
+
+

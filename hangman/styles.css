@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    text-align: center;
+    background-color: #feebf2;
+}
+
+#game-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#word-display {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#keyboard button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#score-panel {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: "Kalnia Glaze", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+

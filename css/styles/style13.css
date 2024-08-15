@@ -1,0 +1,27 @@
+#test {
+    font-size: 25px;
+    width: 650px;
+    text-align: justify;
+}
+
+#test::first-letter {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#test::first-line {
+    text-decoration: solid 1px black underline;
+}
+
+#test::selection {
+    color: yellow;
+    background-color: black;
+}
+
+#test::before {
+    content: "Hi!";
+}
+
+#test::after {
+    content: "Bye!";
+}

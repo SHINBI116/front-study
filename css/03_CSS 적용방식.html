@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_CSS 적용방식.html</title>
+    <style>
+        /* internal CSS */
+        #div1 {
+            border: solid 3px red;
+            width: 150px;
+            height: 150px;
+        }
+        /* div2를 최초로 #id 선택자를 사용해 설정 */
+        #div2 {
+            border: solid 3px red;
+            width: 150px;
+            height: 150px;
+        }
+        /* .class 선택자를 사용해 덮어쓰기를 시도했으나 안됨(#id선택자를 이길 수 없음) */
+        .box {
+            border-color: blue;
+        }
+        /* tagname 선택자로 테두리 색 덮어쓰기를 시도했으나 안됨
+           (#id 선택자를 이길 수 없음) */
+        div {
+            border-color: green;
+        }
+        /* #id 선택자를 사용해 #id로 설정한 테두리 색 덮어쓰기를 성공함
+           (같은 우선순위라면 나중에 나온 설정이 덮어쓰기를 한다) */
+        #div2 {
+            border-color: dodgerblue;
+        }
+    </style>
+    <link rel="stylesheet" href="./style03.css">
+</head>
+<body>
+    
+    <h3># 웹 페이지에 css를 적용하는 방법 3가지</h3>
+
+    <dl>
+        <dt>1. inline CSS (해당 요소의 스타일 속성 사용하기)</dt>
+        <dd>
+            - 해당 요소의 style 속성에 스타일을 직접 정의하는 방식 <br>
+            - CSS 적용 우선 순위가 가장 높다 <br>
+        </dd>
+        <dt>2. internal CSS(파일 내부 CSS)</dt>
+        <dd>
+            - 같은 파일 내부에 존재하는 style 태그를 사용하는 방식 <br>
+            - id 선택자가 .class와 tagname보다는 적용 우선 순위가 높다 <br>
+            - 우선 순위가 같다면 더 나중에 나온 스타일이 앞에 있던 스타일을 덮어쓴다 <br>
+        </dd>
+        <dt>3. external CSS (파일 외부 CSS)</dt>
+        <dd>
+            - 다른 .css 파일을 현재 웹 페이지로 불러서 사용하는 방식 <br>
+            - &lt;link&gt;를 사용해 외부의 .css 파일을 현재 페이지에 로드 할 수 있다 <br>
+            - 우선 순위는 internal CSS와 완전히 동일하다 <br>
+        </dd>
+    </dl>
+
+    <hr>
+
+    <div id="div1" style="/* inline CSS */border-color: aquamarine;">
+        여러 곳에서 한 요소의 테두리 색을 변경한다면 어떻게 될까? 
+    </div>
+
+    <div id="div2" class="box">
+        id로 선택 vs class로 선택 vs tag로 선택
+    </div>
+
+    <div id="div3"> 외부 CSS에서 설정한 스타일</div>
+</body>
+</html>

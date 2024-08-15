@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_flex.html</title>
+    <link rel="stylesheet" href="./styles/style16.css">
+</head>
+<body>
+    <h3># display: flex</h3>
+
+    <ul>
+        <li>해당 요소의 display 속성을 flex로 변경하면 flex-box가 된다</li>
+        <li>해당 박스의 자식 요소들은 자동적으로 flex-item이 된다</li>
+        <li>flex-box는 내부 자식 요소들의 크기를 유연하게 조절해준다</li>
+        <li>유연하게 크기 조절이 되기 위해서는 padding 대신 width/height를 사용해야한다</li>
+
+    </ul>
+
+    <div class="flex-box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3># flex-direction</h3>
+
+    <h5>* flex-direction: row (default)</h5>
+    <div class="flex-box flex-box-row">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h5>* flex-direction: row-reverse</h5>
+    <div class="flex-box flex-box-row-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h5>* flex-direction: column</h5>
+    <div class="flex-box flex-box-column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h5>* flex-direction: column-reverse</h5>
+    <div class="flex-box flex-box-column-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3></h3>
+
+    <h3># justify-content</h3>
+    <ul>
+        <li>flex-start: 요소들을 컨테이너의 왼쪽으로 정렬합니다.</li>
+        <li>flex-end: 요소들을 컨테이너의 오른쪽으로 정렬합니다.</li>   
+        <li>center: 요소들을 컨테이너의 가운데로 정렬합니다.</li> 
+        <li>space-between: 요소들 사이에 동일한 간격을 둡니다.</li> 
+        <li>space-around: 요소들 주위에 동일한 간격을 둡니다.</li>
+        
+    </ul>
+
+    <h3># align-items</h3>
+
+    <ul>
+        <li>flex-start: 요소들을 컨테이너의 꼭대기로 정렬합니다.</li>
+        <li>flex-end: 요소들을 컨테이너의 바닥으로 정렬합니다.</li>
+        <li>center: 요소들을 컨테이너의 세로선 상의 가운데로 정렬합니다.</li>
+        <li>baseline: 요소들을 컨테이너의 시작 위치에 정렬합니다.</li>
+        <li>: 요소들을 컨테이너에 맞도록 늘립니다.</li>
+    </ul>
+
+    <h3># justify-content</h3>
+    <div class="control-panel">
+        <div class="justify-button">flex-start</div>
+        <div class="justify-button">flex-end</div>
+        <div class="justify-button">center</div>
+        <div class="justify-button">space-between</div>
+        <div class="justify-button">space-around</div>
+    </div>
+
+    <h3># align-items</h3>
+    <div class="control-panel">
+        <div class="align-button">flex-start</div>
+        <div class="align-button">flex-end</div>
+        <div class="align-button">center</div>
+        <div class="align-button">baseline</div>
+        <div class="align-button">stretch</div>
+    </div>
+
+    <h3># flex-direction</h3>
+    <div class="control-panel">
+        <div class="direction-button">row</div>
+        <div class="direction-button">row-reverse</div>
+        <div class="direction-button">column</div>
+        <div class="direction-button">column-reverse</div>
+    
+    </div>
+
+    <div id="justify-content-pond" class="pond">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3># flex를 활용해 웹 페이지 레이아웃 구성하기</h3>
+
+    <div class="flex-layout">
+        <header>HEADER</header>
+        <div class="content">
+            <nav>NAV BAR</nav>
+            <main>MAIN CONTENT</main>
+            <aside>ASIDE BAR</aside>
+        </div>
+        <footer>FOOTER</footer>
+    </div>
+
+
+    <script>
+        // id가 아닌 class로 요소를 가져오면 배열 형태로 꺼내온다
+        var justifyButtons = document.getElementsByClassName("justify-button");
+        var justifyPond = document.getElementById("justify-content-pond");
+
+
+        for (var i = 0; i < justifyButtons.length; ++i) {
+            let button = justifyButtons[i];
+            // 자바스크립트에서 onclick 동작 정의하기
+            button.onclick = function () {
+                // CSS에서 속성 이름이 justify-content 처럼
+                // -가 포함되는 경우 자바스크립트에서는 camelCase로 표현한다
+                justifyPond.style.justifyContent = button.innerText;
+            };
+        }
+
+        var alignButtons = document.getElementsByClassName("align-button");
+
+        for (let i = 0; i < alignButtons.length; ++i) {
+            let button = alignButtons[i];
+
+            button.onclick = function() {
+                justifyPond.style.alignItems = button.innerText;
+            };
+        }
+
+        var directionButtons = document.getElementsByClassName("direction-button");
+
+        for (let i = 0; i < directionButtons.length; ++i) {
+            let button = directionButtons[i];
+
+            button.onclick = function() {
+                justifyPond.style.flexDirection = button.innerText;
+            };
+        }
+
+    </script>
+
+
+
+</body>
+</html>

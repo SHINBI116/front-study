@@ -1,0 +1,17 @@
+.student-info {
+    display: grid;
+    grid-template-areas:  4fr 3fr/ 50pt 50pt;
+    text-align: center;
+}
+#all-stu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#pass-math-stu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.each-student {
+    margin: 10px;
+}

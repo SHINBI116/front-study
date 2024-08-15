@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>type="text"</h3>
+
+    <ul type="none">
+        <li><input type="text"></li>
+        <li><input type="text" value="안녕하세요"></li>
+        <li><input type="text" placeholder="이름 입력"></li>
+        <li><input type="text" value="read only" readonly></li>
+        <li><input type="text" value="disabled" disabled></li>
+    </ul>
+
+    <h3>type password</h3>
+
+    <input type="password">
+
+    <input id="input-color" type="color">
+
+    <ul>
+        <li><input type="radio" name="gimbap" id="tuna">
+            <label for="tuna">참치마요</label></li>
+        <li><input type="radio" name="gimbap" id="bul">
+            <label for="bul">고불</label></li>
+        <li><input type="radio" name="gimbap" id="bibim">전빔</li>
+        <li><input type="radio" name="gimbap" id="myung">명란</li>
+    </ul>
+
+    <ul>
+        <li><input type="checkbox" name="hobbies" id="music">
+            <label for="music">음악</label></li>
+        <li><input type="checkbox" name="hobbies">독서</li>
+        <li><input type="checkbox" name="hobbies">영화</li>
+        <li><input type="checkbox" name="hobbies">게임</li>
+    </ul>
+
+    <input type="date">
+
+    <input type="file">
+
+    <div><input type="hidden" value="노무현"></div>
+
+    <textarea name="en" id="eng-area" value="this is eng"></textarea>
+
+    <select name="jobs" id="job-list">
+        <option value="programmer">programmer</option>
+        <option value="dancer">dancer</option>
+    </select>
+
+    <script>
+        const icolor = document.getElementById("input-color");
+
+        console.log(icolor.value);
+    </script>
+</body>
+</html>

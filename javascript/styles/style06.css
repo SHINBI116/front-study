@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+
+}
+
+#gugudan-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+[id^="dan"] {
+    border: solid 1px black;
+    
+}
+
+[id^="dan"] > div:first-of-type {
+    background-color: salmon;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_링크
+    </title>
+</head>
+<body>
+    <h3 id="top"># 다른 페이지로 이동 할 수 있는 링크 걸기</h3>
+
+    <p>
+        - &lt;a&gt;태그 사용하기 <br>
+        - 자바스크립트 사용하기 <br>
+    </p>
+
+    <h3># &lt;a&gt;태그 사용하기</h3>
+
+    - a태그의 href 속성에 원하는 페이지의 경로를 적어서 사용
+
+    <P>
+        
+        - 자세한 내용을 알고 싶으시면 <a href="https://www.naver.com">여기</a>를 클릭하세요! <br>
+        - <a href="./naver.com">여기</a>(./naver.com) <br>
+        - <a href="./www.naver.com">여기</a>(./www.naver.com) <br>
+        - <a href="/naver.com">여기</a>(/www.naver.com) <br>
+        - <a href="//naver.com">여기</a>(//www.naver.com) <br>
+    </P>
+
+    <h3># 웹에서 사용할 수 있는 경로의 종류(./, /, //)</h3>
+
+    <p>
+        - https://comic.naver.com/webtoon/list?titleId=777767가 있을 때 <br>
+        - 해당 위치에서 ./naver.com은 https://comic.naver.com/webtoon/naver.com으로 간다 <br>
+         &nbsp; (가장 마지막 위치에 있는 /에서 해당 경로를 찾는다) <br>
+        - 해당 위치에서 /naver.com은 https://comic.naver.com/naver.com
+        &nbsp; (가장 처음 위치에 있는 /에서 해당 경로를 찾는다 ) <br>
+        - 해당 위치에서 //naver.com https://naver.com으로 간다 <br>
+        &nbsp; (프로토콜 다음에 있는 //에서 해당 경로를 찾는다) <br>
+    </p>
+
+    <h3>Live Stream의 경우</h3>
+
+    <p>
+        
+        - http://127.0.0.1:3000/html/05_링크.html가 있을 때 <br>
+        - 해당 위치에서 ./naver.com은 http://127.0.0.1:3000/html/naver.com으로 간다 <br>
+         &nbsp; (가장 마지막 위치에 있는 /에서 해당 경로를 찾는다) <br>
+        - 해당 위치에서 /naver.com은 http://127.0.0.1:3000/naver.com
+        &nbsp; (가장 처음 위치에 있는 /에서 해당 경로를 찾는다 ) <br>
+        - 해당 위치에서 //naver.com https://naver.com으로 간다 <br>
+        &nbsp; (프로토콜 다음에 있는 //에서 해당 경로를 찾는다) <br>
+    </p>
+
+    <h3># 같은 경로의 다른 페이지로 링크 걸기</h3>
+
+    <a href="./01_HTML 이란.html">01</a> <br>
+    <a href="./02_제목과 문단.html">02</a> <br>
+    <a href="./03_요소.html">03</a> <br>
+    <a href="./04_속성.html">04</a> <br>
+
+    <h3># 해당 페이지의 특정 부분으로 링크 걸기</h3>
+
+    - #id 속성 값을 사용해 페이지의 특정 부분으로 링크를 걸 수 있다 <br>
+
+    <a href="./링크용페이지.html#chap01">챕터1</a> <br>
+    <a href="./링크용페이지.html#chap02">챕터2</a> <br>
+    <a href="./링크용페이지.html#chap03">챕터3</a> <br>
+    <a href="#top">맨 위로</a> <br>
+
+    <h3># 자바스크립트를 사용해 링크 걸기</h3>
+
+    - 자바스크립트로는 꼭 a 태그가 아니더라도 링크를 걸 수 있다 <br>
+
+    <p
+        style="width: 100px; height:100px; border: solid 3px red;"
+        onclick="location.href='https://google.com';"
+    ></p>
+
+    <p 
+        style="width: 100px; height:100px; border: solid 3px orange;"
+        onclick="orangeBoxClickHandler();"
+    ></p>
+
+    <script>
+        // 자바 스크립트로 함수를 정의
+        function orangeBoxClickHandler() {
+            location.href = "https://google.com";
+        }
+    </script>
+
+</body>
+</html>

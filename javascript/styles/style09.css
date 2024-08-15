@@ -1,0 +1,19 @@
+#out {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+
+#out > div {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: blanchedalmond;
+}
+
+#out .head {
+    background-color: orangered;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+

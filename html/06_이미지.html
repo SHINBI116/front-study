@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_이미지</title>
+</head>
+<body>
+    <h3># 웹 페이지에 이미지 넣기</h3>
+
+    <i><b>&lt;img src="" alt="" width="" height=""&gt;</b></i>
+
+    <p>
+        - src 속성 : 출력하고자 하는 이미지의 경로 <br>
+        - alt 속성 : 해당 이미지에 대한 설명 (이미지 출력 실패시 대신 출력되는 문구)<br>
+        - width 속성 : 이미지 너비 <br>
+        - height 속성 : 이미지 높이 <br>
+        - alt 속성은 화면 읽어주는 프로그램(Screen Reader)에서 그림을 읽을 때 사용하는 속성이기 때문에 <br>
+        반드시 채워놓아야 한다 <br>
+    </p>
+
+    <hr>
+
+    <!-- width, height를 모두 설정하면 이미지 비율이 깨질 가능성이 높다-->
+    <img 
+        src="https://dimg.donga.com/wps/NEWS/IMAGE/2014/11/04/67643443.3.jpg" 
+        alt="펭귄이 서있는 그림"
+        width="100"
+        height="100">
+    <!-- width 또는 height를 하나만 설정하면 나머지 값은 자동으로 비율을 유지하며 조절된다 -->
+    <img 
+        src="https://dimg.donga.com/wps/NEWS/IMAGE/2014/11/04/67643443.3.jpg" 
+        alt="펭귄이 서있는 그림"
+        width="100">
+        <img 
+        src="https://dimg.donga.com/wps/NEWS/IMAGE/2014/11/04/67643443.3.jpg" 
+        alt="펭귄이 서있는 그림"
+        width="auto" height="200">
+    
+    <!-- h, p, hr태그는 기본적으로 박스 취급을 하는 태그다 (block 요소)-->
+    <!-- a, b, mark, sub, sup, img 태그는 기본적으로 글자 취급을 하는 태그다(글자들 사이에서 문단을 해치지 않음, inline 요소) -->
+
+    <hr>
+
+    <img src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="펭귄이 신나보이는 그림" width="350">
+    <img src="./image/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="펭귄이 신나보이는 그림" width="350">
+
+<!-- 
+    <h1>h1</h1>
+    <h2>h2</h2>
+
+    <a href="">link1</a>
+    <a href="">link2</a>
+
+    <hr> -->
+    
+    <h3># 연습용</h3>
+    <hr>
+    <img src="https://www.organicfacts.net/wp-content/uploads/2013/06/Pineapple.jpg" alt="파인애플" width="100">
+
+
+</body>
+</html>

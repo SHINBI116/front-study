@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_숫자.html</title>
+    <link rel="stylesheet" href="./styles/style09.css">
+</head>
+<body>
+    
+    <h3># 숫자 다루기</h3>
+
+    <div id="out">
+        <div class="head">메서드명 설명</div>
+        <div class="head">코드 설명</div>
+        <div class="head">출력 예시</div>
+    </div>
+
+    <script>
+        const out = document.getElementById("out");
+
+        const addNewLine = line => 
+            out.innerHTML += `<div>${line.cell1}</div>
+                    <div>${line.cell2}</div><div>${line.cell3}</div>`;
+        
+        addNewLine({
+            cell1: 'parseInt', 
+            cell2: 'parseInt(10.123)', 
+            cell3:'결과: 10'
+        });
+
+        addNewLine({
+            cell1: 'parseFloat',
+            cell2: 'typeof parseFloat("123.1234")',
+            cell3: '결과: float'
+        });
+
+        let a = 10;
+        let b = '10';
+
+        // ==과 ===을 주의해야 한다
+        console.log(a == b);
+
+        a = 1e3; // 1에 10을 3번 곱한 결과 (부동소수점 리터럴)
+        console.log('1e3: ', a);
+        a = 1.333e4; // 1.333에 10을 4번 곱한 결과
+        console.log('1.333e4:', a);
+        a = 1.234e-3 // 1.234에서 10을 3번 나눈 결과
+        console.log('1.234e-3:', a);
+        
+        // Infinity : 무한
+        console.log(10 / 0);
+        console.log(typeof Infinity);
+
+        //NaN : Not a Number
+        console.log(NaN);
+        console.log(typeof NaN);
+
+        // 2진수, 8진수, 16진수
+        console.log(0b111); // 2진수 111
+        console.log(0o111); // 8진수 111
+        console.log(0x111); // 16진수 111
+        console.log(111); // 10진수 111
+
+        // Number()로 다른 타입 값을 숫자로 변환 할 수 있다
+        console.log(typeof Number('123.1234'));
+        console.log(Number(true)); // 1
+        console.log(Number(false)); // 0
+
+
+        // 자바스크립트에서는 1도 true 취급을 받는다
+        let i = 0;
+        while (1) {
+            console.log("Hello!");
+            if (i++ == 100) {
+                break;
+            }
+        }
+
+        // Date타입 인스턴스를 Number()로 변환하면 유닉스 타입을 알 수 있다
+        console.log(new Date());
+        console.log(Number(new Date()));
+
+        // Number()는 정수와 소수를 모두 포함한 개념이기 때문에
+        // parseInt()와 parseFloat()이 따로 존재한다
+        console.log(parseInt('123.12345'));
+        console.log(parseFloat('123.12345'));
+
+        // parseInt()는 문자열을 원하는 진법으로 해석한 값을 구할 수 있다
+        console.log('2진법으로 해석한 111:',parseInt('111', 2));
+        console.log('8진법으로 해석한 111:', parseInt('111', 8));
+        console.log('16진법으로 해석한 111:', parseInt('111', 16));
+
+        // 반올림
+        console.log('반올림 결과: ', Math.round(1.234));
+
+        // 올림
+        console.log('올림 결과: ', Math.ceil(1.234));
+
+        // 내림
+        console.log('내림 결과:', Math.floor(1.999));
+
+
+        // 자바와 같음
+        console.log('랜덤:',Math.random());
+        console.log('10 ~ 30:', parseInt(Math.random() * 21) + 10);
+
+        // Math.max Math.min
+        console.log('최대값: ', Math.max(2,3,4,5,6,7,8,-1,-9));
+
+        let arr = [3, 4, 5, 6, 99, -1, 8];
+
+        // ...을 사용해 값을 여러개 요구하는 곳에 배열을 펼쳐서 넣을 수 있다
+        console.log('arr에서의 최대값: ', Math.max(...arr));
+        console.log('arr에서의 최소값: ', Math.min(...arr))
+
+        // Math.pow, Math.sqrt
+        console.log(Math.pow(2, 10)); // 2의 10제곱
+        console.log(Math.sqrt(49)); // 49의 제곱근
+
+        // parse: 문자 타입에서 해당 타입으로 변환하는 것
+        // toString, stringify : 해당 타입 값을 문자로 변환하는 작업
+        let num = 1101;
+
+        console.log(num.toString());
+        console.log(num.toString(2)); // 10진수 1101을 2진법으로 바꾼 문자열
+        console.log(num.toString(8)); // 10진수 1101을 8진법으로 바꾼 문자열
+        console.log(num.toString(16).toUpperCase()); // 10진수 1101을 16진법으로 바꾼 문자열
+
+
+        // NaN 활용
+        console.log(Number('고구마'));
+        console.log('NaN === NaN: ', NaN === NaN);
+        console.log('NaN == NaN: ', NaN == NaN);
+
+        let value = '100.33';
+
+
+        // NaN은 비교 연산자로는 비교가 불가능한 값이기 때문에
+        // isNaN() 함수를 사용해야 한다
+        if (isNaN(Number(value))) {
+            console.log("변환에 실패했습니다.");
+        } else {
+            console.log("변환에 성공했습니다!");
+        }
+
+        // 연습: 최소값과 최대값을 매개변수로 전달하면 해당 범위의 랜덤 정수를 반환하는 함수를 정의하고 테스트해보세요
+        // (사용 예: randomInteger(2, 10)은 2 ~ 10의 정수가 반환된다)
+
+        const randomInteger = (min, max) =>  parseInt(Math.random() * (Math.abs(min - max) + 1)) + Math.min(min, max);
+        let min = 0;
+        let max = 1;
+        console.log(`${min} ~ ${max} : ${randomInteger(min, max)}`);
+
+        function ranNum(min, max) {
+            return parseInt(Math.random() * Math.abs(max - min + 1) + Math.min(min, max));
+        }
+
+        console.log(ranNum(min, max));
+
+    </script>
+
+</body>
+</html>

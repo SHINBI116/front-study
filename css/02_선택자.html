@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_선택자(Selector).html</title>
+    <style>
+
+
+        /* tagName : 해당 태그 이름을 지닌 모든 요소를 선택 */
+        body {
+            font-size: 30px;
+            background-color: peru;
+            color: white;
+        }
+        /* 
+            #id: 해당 id를 지닌 요소만 선택 
+            ※ 프로그래밍 언어에서 -를 그냥 사용하면 연산자이지만 
+             HTML과 CSS에서는 연산자가 아닌 문자로 사용된다
+        */
+        #list-item3 {
+            color: orange;
+        }
+
+        /* 
+            .className : 클래스 속성값으로 요소들을 선택 할 수 있다 
+            ※ id 속성은 단 하나의 요소만 선택 할 수 있지만
+               class 속성은 선택시 여러개의 요소가 선택된다고 생각해야 한다
+        */
+        .drink {
+            text-decoration: underline double 1px black;
+        }
+
+        div {
+            border: solid white 3px;
+            padding: 10px;
+        }
+
+        div > div {
+            border-color: black;
+        }
+        /* #box1 내부의 자식 div들을 선택 */
+        #box1 {
+            color: black;
+        }
+        #box1 > div {
+            color: red;
+            background-color: white;
+        }
+
+        /* #box2 내부의 자손 div들을 선택 */
+        #box2 div {
+            color: yellow;
+            background-color: navy;
+        }
+
+        #list-item1, #list-itme6 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h3># CSS 선택자</h3>
+
+    <ul>
+        <li>tagName : 해당 태그 이름의 모든 요소 선택</li>
+        <li>#id : 해당 ID를 지닌 요소 하나만 선택</li>
+        <li>.className : 해당 class값을 지닌 모든 요소 선택</li>
+        <li>* : 모든 요소 선택</li>
+        <li>&gt; : 해당 요소의 자식 요소 선택(정확하게 자식 요소만)</li>
+        <li>공백 : 해당 요소의 자손 요소 선택(내부에 있는 모든 요소가 자손)</li>
+        <li>, : 여러개의 선택자를 사용</li>
+        <li><a href="https://flukeout.github.io/">선택자 연습하러 가기</a></li>
+    </ul>
+    <hr>
+    
+    <ul>
+        <li id="list-item1" class="drink">콜라</li>
+        <li id="list-item2" class="drink">사이다</li>
+        <li id="list-item3" class="drink">환타</li>
+        <li id="list-item4" class="drink">홍차</li>
+        <li id="list-item5" class="drink">우롱차</li>
+        <li id="list-itme6" class="car">소나타</li>
+    </ul>
+
+    <hr>
+
+    <!-- div: 그냥 블록 요소를 하나 만들고 싶을 대 사용-->
+    <div id="box1">
+        <div>
+            1
+            <div>1-1</div>
+            <div>1-2</div>
+        </div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div id="box2">
+        <div>
+            1
+            <div>1-1</div>
+            <div>1-2</div>
+        </div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

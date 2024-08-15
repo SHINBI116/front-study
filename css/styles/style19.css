@@ -1,0 +1,48 @@
+
+#hello {
+    background-color: blue;
+    color: yellow;
+    font-size: 40px;
+    padding: 20px;
+}
+
+@media all and (max-width: 1000px) {
+    #hello {
+        background-color: red;
+    }
+}
+@media all and (max-width: 600px) {
+    #hello {
+        background-color: cadetblue;
+    }
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: rebeccapurple;
+}
+
+#flex-container > div {
+    padding: 30px;
+    background-color: orange;
+    font-size: 30px;
+    margin: 5px;
+}
+
+@media all and (min-width: 800px) {
+    #flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: rebeccapurple;
+    }
+
+    #flex-container > div {
+        padding: 30px;
+        background-color: orange;
+        font-size: 30px;
+    }
+}

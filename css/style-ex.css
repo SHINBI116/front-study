@@ -1,0 +1,19 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+h3:first-child {
+    border: solid 3px aquamarine;
+}
+
+div:first-of-type {
+  font-family: "Dancing Script", cursive;
+  font-size: 25pt;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

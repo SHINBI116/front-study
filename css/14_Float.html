@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style14.css">
+    <!-- <link rel="stylesheet" href="./styles/practice-style.css"> -->
+</head>
+<body>
+    <h3># Float</h3>
+
+    <ul>
+        <li>다른 내용들이 float이 설정된 해당 요소를 비켜가게 만드는 속성
+            (냇가에 박혀있는 돌 같은 느낌)
+        </li>
+        <li></li>
+    </ul>
+    <h3># float의 기본 사용</h3>
+    <div class="para">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+    </div>
+
+    <h3># float 요소 2개 이상 넣어보기</h3>
+
+    <h5>* 계속 한쪽 방향으로 넣는 경우 (착실히 쌓임)</h5>
+    <div class="para">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+    </div>
+
+    <h5>* 왼쪽으로 넣었다가 오른쪽 넣었다가 하는 경우 (각자의 방향으로 쌓임)</h5>
+    <div class="para">
+        <img class="left-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="left-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+    </div>
+
+    <h3># clear 속성과 함께 사용하기</h3>
+
+    <ul>
+        <li>clear: left - 해당 float 요소의 왼쪽에 다른 float 요소가 없었으면 한다</li>
+        <li>clear: right - 해당 float 요소의 오른쪽에 다른 float 요소가 없었으면 한다</li>
+        <li>cleat: both - 해당 float 요소의 양쪽에 다른 float 요소가 없었으면 한다</li>
+    </ul>
+    <div class="para">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="left-floating-img clear-right" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="right-floating-img clear-left" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+    </div>
+
+    <h3># 글 내용이 부족 할 때 발생하는 문제 해결하기</h3>
+
+    <ul>
+        <li>float 요소들이 요소의 크기에 잡히지 않아 문제가 발생하는 경우가 있다</li>
+        <li>이 경우 clear를 설정한 요소를 맨 마지막에 두어 
+            float을 마무리 짓고 요소의 전체 범위를 인식하게 만들어 줄 수 있다
+        </li>
+        <li>이 때 주로 ::after 가상 요소를 함께 활용한다</li>
+    </ul>
+    <div class="para">
+        <img class="right-floating-img" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="left-floating-img clear-right" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        <img class="right-floating-img clear-left" src="./images/paul-carroll-Tz3A1ByTkq0-unsplash.jpg" alt="exciting penguin">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ab fuga cum laudantium voluptate reprehenderit debitis architecto error dolores cumque, aliquam quos nam ipsum asperiores recusandae voluptatum! Distinctio, saepe? Placeat?
+        <div style="clear: right;">float을 마감하기 위한 용도</div>
+
+    </div>
+
+
+    <h3># float으로 레이아웃 설정하기</h3>
+
+    <ul>
+        <li>float이 설정된 요소끼리는 차곡차곡 쌓이는 성질을 활용하여
+            레이아웃을 구성 할 수 있다
+        </li>
+    </ul>
+
+    <div id="float-layout">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+
+    <h3># 연습문제</h3>
+
+    <div id="float-layout2">
+        <header>&lt;header&gt;</header>
+        <nav>&lt;nav&gt;</nav>
+        <aside>&lt;aside&gt;</aside>
+        <section>&lt;section&gt;</section>      
+        <article>&lt;article&gt;</article>      
+        <footer>&lt;footer&gt;</footer>
+    </div>
+</body>
+</html>

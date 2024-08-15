@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    <div id="out">
+        <ul>
+            <li id="li-1">1데스</li>
+            <li id="li-2">it is 2</li>
+            <li id="li-3">3입니다</li>
+        </ul>
+    </div>
+
+    <script>
+
+        const out = document.getElementById("out");
+        const lis = document.querySelectorAll("li");
+        const bgaColor = window.setTimeout(() => {
+            out.style.backgroundColor = "black";
+            Array.from(lis).forEach(li => {
+                li.style.color = "white";
+            });
+        }, 1000);
+
+        const colorList = ['red', 'blue', 'salmon'];
+        window.setInterval(() => {
+            lis.forEach(li => {
+                li.style.border = `solid 3px ${colorList[Math.floor(Math.random() * colorList.length)]}`;
+            })
+        }, 1000);
+
+        window.localStorage.setItem("죠죠", "소노치노사다메");
+        window.sessionStorage.setItem("ㄴㄴ", 1);
+        console.log(window.localStorage.getItem("죠죠"));
+    </script>
+</body>
+</html>

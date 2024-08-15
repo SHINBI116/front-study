@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_문자열.html</title>
+</head>
+<body>
+    
+    <h3># 문자열 다루기</h3>
+
+    <div id="out"></div>
+
+    <script>
+        const out = document.getElementById("out");
+        const print = (text = "") => out.innerHTML += text;
+        const println = (text = "") => print(text + '<br>');
+        const printDiv = (text = "") => print(`<div>${text}</div>`);
+
+        const fruits = 'apple/banana/kiwi/pineapple/grape';
+
+        const animal1 = 'giraffe';
+        const animal2 = 'horse';
+
+        const word1 = '돼지고기';
+        const word2 = '돼지고기두루치기';
+        // 자바스크립트는 문자열끼리 비교 연산자를 사용 할 수 있다(사전순 비교)
+        console.log(animal1 < animal2);
+        console.log(word1 > word2);
+
+        // 문자열의 문자 하나에 접근하기
+        println('fruits[0]: ' + fruits[0]);
+
+
+        // length
+        println('length: ' + fruits.length);
+
+        // 반복문으로 한 글자씩 접근하기
+        for (let i = 0; i < fruits.length; ++i) {
+            println(`fruits[${i}] = ${fruits[i]}`);
+        }
+
+        for (ch of fruits) {
+            print(ch);    
+        }
+        println();
+
+        // substring, slice 
+        // start, end 모두 주는 경우 : start 이상 end 미만
+        // start만 주는 경우: start 위치부터 맨 마지막 까지
+        // start에 음수를 주는 경우: 뒤에서부터
+        println('substring(5, 10): ' +  fruits.substring(5, 10));
+        println('substring(10): ' +  fruits.substring(10));
+        println('substring(-5): ' +  fruits.substring(-5));
+        println('slice(5, 10): ' +  fruits.slice(5, 10));
+        println('slice: ' +  fruits.slice(10));
+        println('slice(-5): ' +  fruits.slice(-5));
+        
+        // toUpperCase(), toLowerCase()
+        println(fruits.toUpperCase());
+        println(fruits.toUpperCase().toLowerCase());
+
+
+        // indexOf(searchString, position?)
+        println('apple의 위치: ' + fruits.indexOf('apple'));
+        println('1부터 찾은 apple의 위치: ' + fruits.indexOf('apple', 1));
+
+        // split()
+        console.log(fruits.split('/'));
+
+        for (fruit of fruits.split('/')) {
+            println(fruit);
+        }
+
+        console.log('\n');
+        console.log('\\');
+        console.log('\t');
+        console.log('\uAC00'); // unicode : 그냥 적으면 4자리 까지 가능
+        console.log('\u{1F61C}'); // 4자리 초과값은 {}를 사용해야 함
+        console.log('\u{1F604}');
+        // codePointAt() : 문자의 아스키코드(유니코드) 보기
+        console.log('가'.codePointAt());
+        console.log(new Number(44032).toString(16));
+    </script>
+</body>
+</html>

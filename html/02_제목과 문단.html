@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_제목과 문단</title>
+</head>
+<body>
+
+    <!-- h태그는 6까지 있다 -->
+    <h1>이것은 Heading 태그입니다.</h1>
+    <h2>이것은 Heading 태그입니다.</h2>
+    <h3>이것은 Heading 태그입니다.</h3>
+    <h4>이것은 Heading 태그입니다.</h4>
+    <h5>이것은 Heading 태그입니다.</h5>
+    <h6>이것은 Heading 태그입니다.</h6>
+
+    <!-- Emmet : 반복되는 HTML을 편리하게 생성 할 수 있는 플러그인 -->
+
+    <!-- h1 * 3 -->
+     <h1></h1>
+     <h1></h1>
+     <h1></h1>
+
+    <!-- h$*6 -->
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+
+    <!-- h2#head$*3 (#을 사용해 id를 설정하면서 만들기 ) -->
+    <h2 id="head1"></h2>
+    <h2 id="head2"></h2>
+    <h2 id="head3"></h2>
+
+    <!-- h3.bold*3(.을 사용해 class를 설정하면서 만들기) -->
+    <h3 class="bold"></h3>
+    <h3 class="bold"></h3>
+    <h3 class="bold"></h3>
+    
+    <!-- (h3+p)*3 (+를 사용해 다른 태그를 같은선상에서 만들기) -->
+    <h3></h3>
+    <p></p>
+    <h3></h3>
+    <p></p>
+    <h3></h3>
+    <p></p>
+
+    <!-- ul>li*5 (>를 사용해 태그 내부에 자식 태그로 만들기) -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <p>
+        일반적인 문단을 작성할 때 사용하는 paragraph 태그
+    </p>
+
+    <pre>
+        안에적은 내용이
+        형태를 유지하는 태그
+
+    </pre>
+
+    <!-- 대부분의 HTML태그들은 의미만 지니고 있는 경우가 많다(HTML은 웹 페이지의 뼈대 역할) -->
+    <code>
+        class Main {
+            public static void main(String[] args) {
+                System.out.println("Hello, world!");
+            }
+        }
+        
+    </code>
+
+    <h3> 문단 내부에서 글자를 꾸며주는 태그들 </h3>
+
+    <!--
+        b : 글자를 굵게
+        strong : 중요한 내용
+        i : 이텔릭체 (나중에 아이콘이라는 의미로 변질됨)
+        mark : 형광펜으로 표시
+        del : 취소선
+        ins : 밑줄 강조
+        sub : sub text 작은 글씨 살짝 아래로
+        sup : super text 작은 글씨 살짝 위로
+    -->
+        <p>
+            <b>Lorem ipsum</b> dolor sit amet, <strong>consectetur</strong> adipiscing elit,
+            <i>sed do eiusmod tempor <b>incididunt</b> ut labore et dolore magna aliqua.</i> 
+            Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est 
+            lorem ipsum dolor sit.<mark>Volutpat odio</mark> facilisis mauris sit amet massa. 
+            <del>Commodo odio aenean</del> sed adipiscing diam donec adipiscing tristique. 
+            Mi eget mauris pharetra et. <ins>Non tellus orci ac auctor augue.</ins> 
+            Elit at imperdiet dui accumsan sit. Ornare <sub>arcu</sub> dui vivamus arcu felis. 
+            Egestas integer <sup>eget</sup> aliquet nibh praesent. In hac habitasse platea dictumst 
+            quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+        </p>
+
+</body>
+</html>
+
+<!-- open in browser -->
